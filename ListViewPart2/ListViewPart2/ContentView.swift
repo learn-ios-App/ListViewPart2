@@ -26,7 +26,10 @@ struct ContentView: View {
                     TextField("動物の種類を記入してください", text: $animalName,
                               onCommit: {
                         self.addAnimal()
-                        animalName = "　"
+                        DispatchQueue.main.async {
+                            animalName = ""
+                        }
+
                     })
                 }
 
